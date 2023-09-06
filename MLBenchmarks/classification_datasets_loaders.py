@@ -20,9 +20,9 @@ def load_wine():
 
     return dataset
 
-""" def load_spambase():
+def load_spambase():
 
-    df = pd.read_csv('datasets/Classification/spambase/spambase.data', sep=',',header=None)
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/spambase/spambase.data', sep=',',header=None)
     df = df.dropna()
     df = df.to_numpy()
 
@@ -39,7 +39,7 @@ def load_wine():
 def load_student_dropout():
 
     label_encoder = preprocessing.LabelEncoder()
-    df = pd.read_csv('datasets/Classification/predict+students+dropout+and+academic+success/data.csv', sep=';')
+    df = pd.read_csv('dhttps://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/predict+students+dropout+and+academic+success/data.csv', sep=';')
 
     df = df.dropna()
 
@@ -57,7 +57,7 @@ def load_dry_bean():
     
     label_encoder = preprocessing.LabelEncoder()
 
-    df = pd.read_excel('datasets/Classification/dry+bean+dataset/DryBeanDataset/Dry_Bean_Dataset.xlsx')
+    df = pd.read_excel('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/dry+bean+dataset/DryBeanDataset/Dry_Bean_Dataset.xlsx')
     
     df['Class'] = label_encoder.fit_transform(df['Class'])
     
@@ -68,7 +68,7 @@ def load_dry_bean():
 
 def load_mushroom():
 
-    df = pd.read_csv('datasets/Classification/mushroom/agaricus-lepiota.data', sep=',', header = 0,
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/mushroom/agaricus-lepiota.data', sep=',', header = 0,
                      names = ['class',
                               'cap-shape',
                               'cap-surface',
@@ -103,4 +103,4 @@ def load_mushroom():
     dataset = {'target': df['class'].to_numpy(),
                 'data': df.drop(['class'],axis=1).to_numpy()}
 
-    return dataset """
+    return dataset
