@@ -166,7 +166,8 @@ Here's an overview of the folder structure of this repository:
                 + automobile/
                 + student/
                 + wine+quality/
-        + examples/
+        + Tests/
+    + Examples/
 
 
 ## License
