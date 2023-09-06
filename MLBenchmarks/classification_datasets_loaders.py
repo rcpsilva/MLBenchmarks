@@ -2,16 +2,10 @@ import pkg_resources
 import pandas as pd
 from sklearn import preprocessing
 
-package_name = 'MLBenchmarks'
-subpackage_name = 'MLBenchmarks'
 
 def load_wine():
 
-    # Define the relative path to file.csv within the datafiles folder
-    relative_file_path = 'MLBenchmarks/datasets/Classification/wine/wine.data'
-
-    # Get the full path to file.csv
-    file_path = pkg_resources.resource_filename(package_name, relative_file_path)
+    file_path = 'https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/wine/wine.data'
 
 
     df = pd.read_csv(file_path, sep=',',header=None)
