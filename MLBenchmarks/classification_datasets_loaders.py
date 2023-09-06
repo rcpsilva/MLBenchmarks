@@ -11,7 +11,7 @@ def load_wine():
     relative_file_path = 'datasets/Classification/wine/wine.data'
 
     # Get the full path to file.csv
-    file_path = pkg_resources.resource_filename(f'{package_name}.{subpackage_name}', relative_file_path)
+    file_path = pkg_resources.resource_filename(f'{package_name}', relative_file_path)
 
     df = pd.read_csv(file_path, sep=',',header=None)
     df = df.dropna()
