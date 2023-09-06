@@ -6,8 +6,8 @@ import os
 import json
 from tqdm import tqdm
 from sklearn.model_selection import cross_validate
-import MLbenchmarks.classification_datasets_loaders as classification_datasets_loaders
-import MLbenchmarks.regression_datasets_loaders as regression_datasets_loaders
+import MLBenchmarks.classification_datasets_loaders as classification_datasets_loaders
+import MLBenchmarks.regression_datasets_loaders as regression_datasets_loaders
 
 def load_regression_datasets():
 
