@@ -3,7 +3,7 @@ from sklearn import preprocessing
 
 def load_auto_mpg():
     
-    df = pd.read_csv('datasets/Regression/auto+mpg/auto-mpg.data', sep=',', header = 0,
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/auto+mpg/auto-mpg.data', sep=',', header = 0,
                      names = ['blank',
                               'mpg',
                               'cylinders',
@@ -21,14 +21,14 @@ def load_auto_mpg():
     return dataset
 
 def load_wine_quality_red():
-    df = pd.read_csv('datasets/Regression/wine+quality/winequality-red.csv',sep=';')
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/wine+quality/winequality-red.csv',sep=';')
     dataset = {'target': df['quality'].to_numpy(),
                 'data': df.drop(['quality'],axis=1).to_numpy()}
     return dataset
 
 def load_wine_quality_white():
 
-    df = pd.read_csv('datasets/Regression/wine+quality/winequality-white.csv',sep=';')
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/wine+quality/winequality-white.csv',sep=';')
     dataset = {'target': df['quality'].to_numpy(),
                 'data': df.drop(['quality'],axis=1).to_numpy()}
     return dataset
@@ -36,7 +36,7 @@ def load_wine_quality_white():
 def load_student_mat():
     label_encoder = preprocessing.LabelEncoder()
 
-    df = pd.read_csv('datasets/Regression/student/studentmat.csv',sep=';') # Carrega os dados
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/student/studentmat.csv',sep=';') # Carrega os dados
     df = df.dropna() # Retira valores faltantes
 
     cat = df.select_dtypes(exclude='number')
@@ -51,7 +51,7 @@ def load_student_mat():
 def load_student_por():
     label_encoder = preprocessing.LabelEncoder()
 
-    df = pd.read_csv('datasets/Regression/student/studentpor.csv',sep=';') # Carrega os dados
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/student/studentpor.csv',sep=';') # Carrega os dados
     df = df.dropna() # Retira valores faltantes
 
     cat = df.select_dtypes(exclude='number')
