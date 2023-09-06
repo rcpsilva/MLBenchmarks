@@ -14,7 +14,8 @@ setup(
                       'numpy',
                       'scikit-learn',
                       'pandas',
-                      'openpyxl'
+                      'openpyxl',
+                      'setuptools'
                       ],
     classifiers=[
         'Topic :: Software Development :: Libraries :: Python Modules',

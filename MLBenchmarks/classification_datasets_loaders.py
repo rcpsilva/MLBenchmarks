@@ -1,9 +1,30 @@
+import pkg_resources
+
+# Define the package and subpackage names
+package_name = 'MLBenchmarks'
+subpackage_name = 'MLBenchmarks'
+datasource = 'datasets'
+
+# Define the path to the datafiles folder
+datafiles_path = pkg_resources.resource_filename(f'{package_name}.{subpackage_name}', datasource)
+
+# List the files in the datafiles folder
+datafiles = pkg_resources.resource_listdir(f'{package_name}.{subpackage_name}', datasource)
+
+# Loop through the files and access them
+for file_name in datafiles:
+    file_path = pkg_resources.resource_filename(f'{package_name}.{subpackage_name}.{datasource}', file_name)
+    # Now you can use 'file_path' to access each file in your code
+
+
 import pandas as pd
 from sklearn import preprocessing
 
 def load_wine():
 
-    df = pd.read_csv('datasets/Classification/wine/wine.data', sep=',',header=None)
+    data_file_path = pkg_resources.resource_filename('MLBenchmarks.datasets.Classification.wine', 'wine.data')
+
+    df = pd.read_csv(data_file_path, sep=',',header=None)
     df = df.dropna()
     df = df.to_numpy()
 
@@ -15,7 +36,7 @@ def load_wine():
 
     return dataset
 
-def load_spambase():
+""" def load_spambase():
 
     df = pd.read_csv('datasets/Classification/spambase/spambase.data', sep=',',header=None)
     df = df.dropna()
@@ -98,4 +119,4 @@ def load_mushroom():
     dataset = {'target': df['class'].to_numpy(),
                 'data': df.drop(['class'],axis=1).to_numpy()}
 
-    return dataset
+    return dataset """
