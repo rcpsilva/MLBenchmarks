@@ -8,10 +8,11 @@ subpackage_name = 'MLBenchmarks'
 def load_wine():
 
     #Define the relative path to file.csv within the datafiles folder
-    relative_file_path = 'MLBenchmarks/datasets/Classification/wine/wine.data'
+    relative_file_path = f'{subpackage_name}/datasets/Classification/wine/wine.data'
+
 
     # Get the full path to file.csv
-    file_path = pkg_resources.resource_filename(f'{package_name}', relative_file_path)
+    file_path = pkg_resources.resource_filename(package_name, relative_file_path)
 
     df = pd.read_csv(file_path, sep=',',header=None)
     df = df.dropna()
