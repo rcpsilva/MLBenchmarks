@@ -1,22 +1,4 @@
 import pkg_resources
-
-# Define the package and subpackage names
-package_name = 'MLBenchmarks'
-subpackage_name = 'MLBenchmarks'
-datasource = 'datasets'
-
-# Define the path to the datafiles folder
-datafiles_path = pkg_resources.resource_filename(f'{package_name}.{subpackage_name}', datasource)
-
-# List the files in the datafiles folder
-datafiles = pkg_resources.resource_listdir(f'{package_name}.{subpackage_name}', datasource)
-
-# Loop through the files and access them
-for file_name in datafiles:
-    file_path = pkg_resources.resource_filename(f'{package_name}.{subpackage_name}.{datasource}', file_name)
-    # Now you can use 'file_path' to access each file in your code
-
-
 import pandas as pd
 from sklearn import preprocessing
 
