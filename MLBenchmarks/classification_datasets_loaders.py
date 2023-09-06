@@ -39,7 +39,7 @@ def load_spambase():
 def load_student_dropout():
 
     label_encoder = preprocessing.LabelEncoder()
-    df = pd.read_csv('dhttps://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/predict+students+dropout+and+academic+success/data.csv', sep=';')
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/predict+students+dropout+and+academic+success/data.csv', sep=';')
 
     df = df.dropna()
 
