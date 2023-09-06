@@ -27,6 +27,9 @@ This repository defines a set of functions for benchmarking machine learning mod
 
 ## Usage
 
+See [example notebooks](https://github.com/rcpsilva/MLBenchmarks/tree/main/Examples) for more thorough code.
+For simple use, see below.
+
 ### Classification
 
 - Benchmarking a single model 
