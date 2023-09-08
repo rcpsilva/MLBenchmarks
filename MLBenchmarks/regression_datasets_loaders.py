@@ -10,6 +10,8 @@ def load_forest_fires():
     for col in cat.columns:
         df[col] = label_encoder.fit_transform(df[col])
     
+
+    df = df.to_numpy()
     target = df[:,-1]
     data = df[:,:-1]
 
