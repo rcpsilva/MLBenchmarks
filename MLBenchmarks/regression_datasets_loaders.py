@@ -1,6 +1,24 @@
 import pandas as pd
 from sklearn import preprocessing
 
+def load_forest_fires():
+
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/forest+fires/forestfires.csv')
+
+    cat = df.select_dtypes(exclude='number')
+    label_encoder = preprocessing.LabelEncoder()
+    for col in cat.columns:
+        df[col] = label_encoder.fit_transform(df[col])
+    
+    target = df[:,-1]
+    data = df[:,:-1]
+
+    dataset = {'target': target,
+            'data': data}
+    
+    return dataset
+                    
+
 def load_energy_efficiency_y1():
     df = pd.read_excel('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/energy+efficiency/ENB2012_data.xlsx')
 
