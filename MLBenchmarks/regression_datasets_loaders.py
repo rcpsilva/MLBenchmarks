@@ -1,6 +1,33 @@
 import pandas as pd
 from sklearn import preprocessing
 
+def load_energy_efficiency_y1():
+    df = pd.read_excel('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/energy+efficiency/ENB2012_data.xlsx')
+
+    df = df.to_numpy()
+
+    target = df[:,8]
+    data = df[:,:8]
+
+    dataset = {'target': target,
+            'data': data}
+    
+    return dataset
+
+def load_energy_efficiency_y2():
+    df = pd.read_excel('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/energy+efficiency/ENB2012_data.xlsx')
+
+    df = df.to_numpy()
+
+    target = df[:,9]
+    data = df[:,:8]
+
+    dataset = {'target': target,
+            'data': data}
+    
+    return dataset
+
+
 def load_auto_mpg():
     
     df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/auto+mpg/auto-mpg.data', sep=',', header = 0,
