@@ -16,8 +16,7 @@ def load_forest_fires():
     dataset = {'target': target,
             'data': data}
     
-    return dataset
-                    
+    return dataset                    
 
 def load_energy_efficiency_y1():
     df = pd.read_excel('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/energy+efficiency/ENB2012_data.xlsx')
@@ -44,7 +43,6 @@ def load_energy_efficiency_y2():
             'data': data}
     
     return dataset
-
 
 def load_auto_mpg():
     
