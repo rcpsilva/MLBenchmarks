@@ -1,6 +1,21 @@
 import pandas as pd
 from sklearn import preprocessing
 
+
+def load_real_state_valuation():
+    df = pd.read_excel('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/real+estate+valuation+data+set/RealEstateValuationDataSet.xlsx')
+
+    df = df.to_numpy()
+
+    target = df[:,-1]
+    data = df[:,1:-1]
+
+    dataset = {'target': target,
+            'data': data}
+    
+    return dataset 
+
+
 def load_forest_fires():
 
     df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/forest+fires/forestfires.csv')
