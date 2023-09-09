@@ -1,6 +1,34 @@
 import pandas as pd
+import numpy as np
 from sklearn import preprocessing
 
+def load_bike_sharing_day():
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/bike+sharing+dataset/day.csv')
+
+    df = df.drop(['instant','dteday'],axis=1)
+    df = df.to_numpy(dtype=np.float32)
+
+    target = df[:,-1]
+    data = df[:,:-1]
+
+    dataset = {'target': target,
+            'data': data}
+    
+    return dataset 
+
+def load_bike_sharing_hour():
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/bike+sharing+dataset/hour.csv')   
+
+    df = df.drop(['instant','dteday'],axis=1)
+    df = df.to_numpy(dtype=np.float32)
+
+    target = df[:,-1]
+    data = df[:,:-1]
+
+    dataset = {'target': target,
+            'data': data}
+    
+    return dataset 
 
 def load_real_state_valuation():
     df = pd.read_excel('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/real+estate+valuation+data+set/RealEstateValuationDataSet.xlsx')
