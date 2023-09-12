@@ -1,13 +1,11 @@
 # MLBenchmarks
  
-# BenchmarkML
+Benchmark your machine learning algorithms and pipelines with ease. Currently, regression and classification problems on tabular data. 
 
-This repository defines a set of functions for benchmarking machine learning models on multiple datasets. 
 
 ![GitHub](https://img.shields.io/github/license/rcpsilva/BenchmarkML)
 ![GitHub last commit](https://img.shields.io/github/last-commit/rcpsilva/BenchmarkML)
 ![GitHub stars](https://img.shields.io/github/stars/rcpsilva/BenchmarkML?style=social)
-
 
 ## Table of Contents
 
