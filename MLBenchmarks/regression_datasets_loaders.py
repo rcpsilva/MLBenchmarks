@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 from sklearn import preprocessing
 
+def 
+
 def load_obesity_levels():
     df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition/ObesityDataSet_raw_and_data_sinthetic.csv')
 
