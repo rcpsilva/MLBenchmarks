@@ -2,7 +2,330 @@ import pandas as pd
 import numpy as np
 from sklearn import preprocessing
 
-def 
+def load_facebook_post_interactions():
+    
+    target_idx = 18
+
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/facebook+metrics/dataset_Facebook.csv',
+                     sep=';')
+
+    df = df.dropna()
+    
+    cat = df.select_dtypes(exclude='number')
+    label_encoder = preprocessing.LabelEncoder()
+    for col in cat.columns:
+        df[col] = label_encoder.fit_transform(df[col])
+    
+    df = df.to_numpy()
+
+    target = df[:,target_idx]
+    data = df[:,0:7]
+
+    dataset = {'target': target,
+            'data': data,
+            'info': 'https://archive.ics.uci.edu/dataset/368/facebook+metrics',
+            'date_access': '2023-09-12'}
+    
+    return dataset 
+
+
+def load_facebook_post_shares():
+    
+    target_idx = 17
+
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/facebook+metrics/dataset_Facebook.csv',
+                     sep=';')
+    df = df.dropna()
+
+    cat = df.select_dtypes(exclude='number')
+    label_encoder = preprocessing.LabelEncoder()
+    for col in cat.columns:
+        df[col] = label_encoder.fit_transform(df[col])
+    
+    df = df.to_numpy()
+
+    target = df[:,target_idx]
+    data = df[:,0:7]
+
+    dataset = {'target': target,
+            'data': data,
+            'info': 'https://archive.ics.uci.edu/dataset/368/facebook+metrics',
+            'date_access': '2023-09-12'}
+    
+    return dataset 
+
+
+def load_facebook_post_likes():
+    
+    target_idx = 16
+
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/facebook+metrics/dataset_Facebook.csv',
+                     sep=';')
+    df = df.dropna()
+    cat = df.select_dtypes(exclude='number')
+    label_encoder = preprocessing.LabelEncoder()
+    for col in cat.columns:
+        df[col] = label_encoder.fit_transform(df[col])
+    
+    df = df.to_numpy()
+
+    target = df[:,target_idx]
+    data = df[:,0:7]
+
+    dataset = {'target': target,
+            'data': data,
+            'info': 'https://archive.ics.uci.edu/dataset/368/facebook+metrics',
+            'date_access': '2023-09-12'}
+    
+    return dataset 
+
+
+def load_facebook_comments():
+    
+    target_idx = 15
+
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/facebook+metrics/dataset_Facebook.csv',
+                     sep=';')
+    df = df.dropna()
+
+    cat = df.select_dtypes(exclude='number')
+    label_encoder = preprocessing.LabelEncoder()
+    for col in cat.columns:
+        df[col] = label_encoder.fit_transform(df[col])
+    
+    df = df.to_numpy()
+
+    target = df[:,target_idx]
+    data = df[:,0:7]
+
+    dataset = {'target': target,
+            'data': data,
+            'info': 'https://archive.ics.uci.edu/dataset/368/facebook+metrics',
+            'date_access': '2023-09-12'}
+    
+    return dataset 
+
+
+def load_facebook_liked_engaged():
+    
+    target_idx = 14
+
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/facebook+metrics/dataset_Facebook.csv',
+                     sep=';')
+    df = df.dropna()
+
+    cat = df.select_dtypes(exclude='number')
+    label_encoder = preprocessing.LabelEncoder()
+    for col in cat.columns:
+        df[col] = label_encoder.fit_transform(df[col])
+    
+    df = df.to_numpy()
+
+    target = df[:,target_idx]
+    data = df[:,0:7]
+
+    dataset = {'target': target,
+            'data': data,
+            'info': 'https://archive.ics.uci.edu/dataset/368/facebook+metrics',
+            'date_access': '2023-09-12'}
+    
+    return dataset 
+
+
+def load_facebook_reach_liked():
+    
+    target_idx = 13
+
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/facebook+metrics/dataset_Facebook.csv',
+                     sep=';')
+    df = df.dropna()
+
+    cat = df.select_dtypes(exclude='number')
+    label_encoder = preprocessing.LabelEncoder()
+    for col in cat.columns:
+        df[col] = label_encoder.fit_transform(df[col])
+    
+    df = df.to_numpy()
+
+    target = df[:,target_idx]
+    data = df[:,0:7]
+
+    dataset = {'target': target,
+            'data': data,
+            'info': 'https://archive.ics.uci.edu/dataset/368/facebook+metrics',
+            'date_access': '2023-09-12'}
+    
+    return dataset 
+
+
+def load_facebook_impressions_liked():
+    
+    target_idx = 12
+
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/facebook+metrics/dataset_Facebook.csv',
+                     sep=';')
+    df = df.dropna()
+
+    cat = df.select_dtypes(exclude='number')
+    label_encoder = preprocessing.LabelEncoder()
+    for col in cat.columns:
+        df[col] = label_encoder.fit_transform(df[col])
+    
+    df = df.to_numpy()
+
+    target = df[:,target_idx]
+    data = df[:,0:7]
+
+    dataset = {'target': target,
+            'data': data,
+            'info': 'https://archive.ics.uci.edu/dataset/368/facebook+metrics',
+            'date_access': '2023-09-12'}
+    
+    return dataset 
+
+
+def load_facebook_post_consumptions():
+    
+    target_idx = 11
+
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/facebook+metrics/dataset_Facebook.csv',
+                     sep=';')
+    df = df.dropna()
+
+    cat = df.select_dtypes(exclude='number')
+    label_encoder = preprocessing.LabelEncoder()
+    for col in cat.columns:
+        df[col] = label_encoder.fit_transform(df[col])
+    
+    df = df.to_numpy()
+
+    target = df[:,target_idx]
+    data = df[:,0:7]
+
+    dataset = {'target': target,
+            'data': data,
+            'info': 'https://archive.ics.uci.edu/dataset/368/facebook+metrics',
+            'date_access': '2023-09-12'}
+    
+    return dataset 
+
+
+
+def load_facebook_post_consumers():
+    
+    target_idx = 10
+
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/facebook+metrics/dataset_Facebook.csv',
+                     sep=';')
+    df = df.dropna()
+
+    cat = df.select_dtypes(exclude='number')
+    label_encoder = preprocessing.LabelEncoder()
+    for col in cat.columns:
+        df[col] = label_encoder.fit_transform(df[col])
+    
+    df = df.to_numpy()
+
+    target = df[:,target_idx]
+    data = df[:,0:7]
+
+    dataset = {'target': target,
+            'data': data,
+            'info': 'https://archive.ics.uci.edu/dataset/368/facebook+metrics',
+            'date_access': '2023-09-12'}
+    
+    return dataset 
+
+def load_facebook_engaged_users():
+    
+    target_idx = 9
+
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/facebook+metrics/dataset_Facebook.csv',
+                     sep=';')
+    df = df.dropna()
+
+    cat = df.select_dtypes(exclude='number')
+    label_encoder = preprocessing.LabelEncoder()
+    for col in cat.columns:
+        df[col] = label_encoder.fit_transform(df[col])
+    
+    df = df.to_numpy()
+
+    target = df[:,target_idx]
+    data = df[:,0:7]
+
+    dataset = {'target': target,
+            'data': data,
+            'info': 'https://archive.ics.uci.edu/dataset/368/facebook+metrics',
+            'date_access': '2023-09-12'}
+    
+    return dataset 
+
+def load_facebook_lifetime_impressions():
+    
+    target_idx = 8
+
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/facebook+metrics/dataset_Facebook.csv',
+                     sep=';')
+    df = df.dropna()
+
+    cat = df.select_dtypes(exclude='number')
+    label_encoder = preprocessing.LabelEncoder()
+    for col in cat.columns:
+        df[col] = label_encoder.fit_transform(df[col])
+    
+    df = df.to_numpy()
+
+    target = df[:,target_idx]
+    data = df[:,0:7]
+
+    dataset = {'target': target,
+            'data': data,
+            'info': 'https://archive.ics.uci.edu/dataset/368/facebook+metrics',
+            'date_access': '2023-09-12'}
+    
+    return dataset 
+
+def load_facebook_lifetime_reach():
+    
+    target_idx = 7
+
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/facebook+metrics/dataset_Facebook.csv',
+                     sep=';')
+    df = df.dropna()
+
+    cat = df.select_dtypes(exclude='number')
+    label_encoder = preprocessing.LabelEncoder()
+    for col in cat.columns:
+        df[col] = label_encoder.fit_transform(df[col])
+    
+    df = df.to_numpy()
+
+    target = df[:,target_idx]
+    data = df[:,0:7]
+
+    dataset = {'target': target,
+            'data': data,
+            'info': 'https://archive.ics.uci.edu/dataset/368/facebook+metrics',
+            'date_access': '2023-09-12'}
+    
+    return dataset 
+
+def load_concrete_strength():
+
+    df = pd.read_excel('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/concrete+compressive+strength/Concrete_Data.xls')
+
+    df = df.to_numpy()
+
+    target = df[:,-1]
+    data = df[:,1:-1]
+    
+    dataset = {'target': target,
+            'data': data,
+            'info':'https://archive.ics.uci.edu/dataset/165/concrete+compressive+strength',
+            'date_access':'2023-09-12'}
+    
+    return dataset 
 
 def load_obesity_levels():
     df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition/ObesityDataSet_raw_and_data_sinthetic.csv')
