@@ -2,9 +2,9 @@
 
 Benchmark your machine learning algorithms and pipelines with ease. Currently, regression and classification problems on tabular data. 
 
-![GitHub](https://img.shields.io/github/license/rcpsilva/BenchmarkML)
-![GitHub last commit](https://img.shields.io/github/last-commit/rcpsilva/BenchmarkML)
-![GitHub stars](https://img.shields.io/github/stars/rcpsilva/BenchmarkML?style=social)
+![GitHub](https://img.shields.io/github/license/rcpsilva/MLBenchmarks)
+![GitHub last commit](https://img.shields.io/github/last-commit/rcpsilva/MLBenchmarks)
+![GitHub stars](https://img.shields.io/github/stars/rcpsilva/MLBenchmarks?style=social)
 
 ## Table of Contents
 
