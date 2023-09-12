@@ -15,7 +15,8 @@ setup(
                       'scikit-learn',
                       'pandas',
                       'openpyxl',
-                      'setuptools'
+                      'setuptools',
+                      'xlrd'
                       ],
     classifiers=[
         'Topic :: Software Development :: Libraries :: Python Modules',
