@@ -13,7 +13,8 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  build: 
+    name: python tests
 
     runs-on: ubuntu-latest
 
