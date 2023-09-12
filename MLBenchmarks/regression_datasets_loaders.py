@@ -32,7 +32,9 @@ def load_bike_sharing_day():
     data = df[:,:-1]
 
     dataset = {'target': target,
-            'data': data}
+            'data': data,
+            'info':'https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset',
+            'date_access':'2023-09-12'}
     
     return dataset 
 
@@ -46,7 +48,9 @@ def load_bike_sharing_hour():
     data = df[:,:-1]
 
     dataset = {'target': target,
-            'data': data}
+            'data': data,
+            'info':'https://archive.ics.uci.edu/dataset/275/bike+sharing+dataset',
+            'date_access':'2023-09-12'}
     
     return dataset 
 
