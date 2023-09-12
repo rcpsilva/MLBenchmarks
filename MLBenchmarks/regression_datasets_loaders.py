@@ -61,12 +61,13 @@ def load_real_state_valuation():
 
     target = df[:,-1]
     data = df[:,1:-1]
-
+    
     dataset = {'target': target,
-            'data': data}
+            'data': data,
+            'info':'https://archive.ics.uci.edu/dataset/477/real+estate+valuation+data+set',
+            'date_access':'2023-09-12'}
     
     return dataset 
-
 
 def load_forest_fires():
 
@@ -83,7 +84,9 @@ def load_forest_fires():
     data = df[:,:-1]
 
     dataset = {'target': target,
-            'data': data}
+            'data': data,
+            'info':'https://archive.ics.uci.edu/dataset/162/forest+fires',
+            'date_access':'2023-09-12'}
     
     return dataset                    
 
@@ -96,7 +99,9 @@ def load_energy_efficiency_y1():
     data = df[:,:8]
 
     dataset = {'target': target,
-            'data': data}
+            'data': data,
+            'info':'https://archive.ics.uci.edu/dataset/242/energy+efficiency',
+            'date_access':'2023-09-12'}
     
     return dataset
 
@@ -109,7 +114,9 @@ def load_energy_efficiency_y2():
     data = df[:,:8]
 
     dataset = {'target': target,
-            'data': data}
+            'data': data,
+            'info':'https://archive.ics.uci.edu/dataset/242/energy+efficiency',
+            'date_access':'2023-09-12'}
     
     return dataset
 
@@ -128,21 +135,27 @@ def load_auto_mpg():
                               'car name'])
     
     dataset = {'target': df['mpg'].to_numpy(),
-                'data': df.drop(['blank','car name','mpg'],axis=1).to_numpy()}
+                'data': df.drop(['blank','car name','mpg'],axis=1).to_numpy(),
+                'info':'https://archive.ics.uci.edu/dataset/9/auto+mpg',
+                'date_access':'2023-09-12'}
 
     return dataset
 
 def load_wine_quality_red():
     df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/wine+quality/winequality-red.csv',sep=';')
     dataset = {'target': df['quality'].to_numpy(),
-                'data': df.drop(['quality'],axis=1).to_numpy()}
+                'data': df.drop(['quality'],axis=1).to_numpy(),
+                'info':'https://archive.ics.uci.edu/dataset/186/wine+quality',
+                'date_access':'2023-09-12'}
     return dataset
 
 def load_wine_quality_white():
 
     df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/wine+quality/winequality-white.csv',sep=';')
     dataset = {'target': df['quality'].to_numpy(),
-                'data': df.drop(['quality'],axis=1).to_numpy()}
+                'data': df.drop(['quality'],axis=1).to_numpy(),
+                'info':'https://archive.ics.uci.edu/dataset/186/wine+quality',
+                'date_access':'2023-09-12'}
     return dataset
 
 def load_student_mat():
@@ -157,7 +170,10 @@ def load_student_mat():
         df[col] = label_encoder.fit_transform(df[col])
 
     dataset = {'target': df['G3'].to_numpy(),
-                'data': df.drop(['G1','G2','G3'],axis=1).to_numpy()}
+                'data': df.drop(['G1','G2','G3'],axis=1).to_numpy(),
+                'info':'',
+                'info':'https://archive.ics.uci.edu/dataset/320/student+performance',
+                'date_access':'2023-12-09'}
     return dataset
 
 def load_student_por():
@@ -172,7 +188,10 @@ def load_student_por():
         df[col] = label_encoder.fit_transform(df[col])
 
     dataset = {'target': df['G3'].to_numpy(),
-                'data': df.drop(['G1','G2','G3'],axis=1).to_numpy()}
+                'data': df.drop(['G1','G2','G3'],axis=1).to_numpy(),
+                'info':'https://archive.ics.uci.edu/dataset/320/student+performance',
+                'date_access':'2023-12-09'}
+    
     return dataset
 
 
