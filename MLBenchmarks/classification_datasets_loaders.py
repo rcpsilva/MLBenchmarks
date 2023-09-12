@@ -2,23 +2,6 @@ import pkg_resources
 import pandas as pd
 from sklearn import preprocessing
 
-def bad_load_wine():
-
-    file_path = 'https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/wine/wine.data'
-
-
-    df = pd.read_csv(file_path, sep=',',header=None)
-    df = df.dropna()
-    df = df.to_numpy()
-
-    target = df[:,0]
-    data = df[:,1:]
-
-    dataset = {'target': target,
-            'data': data,
-            'info':'https://archive.ics.uci.edu/dataset/109/wine',
-            'date_access':'2023-12-09'}
-
 def load_wine():
 
     file_path = 'https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/wine/wine.data'

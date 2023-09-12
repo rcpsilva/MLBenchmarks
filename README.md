@@ -1,8 +1,5 @@
 # MLBenchmarks
-added bad load_wine
-
 Benchmark your machine learning algorithms and pipelines with ease. Currently, regression and classification problems on tabular data. 
-
 
 ![GitHub](https://img.shields.io/github/license/rcpsilva/BenchmarkML)
 ![GitHub last commit](https://img.shields.io/github/last-commit/rcpsilva/BenchmarkML)
