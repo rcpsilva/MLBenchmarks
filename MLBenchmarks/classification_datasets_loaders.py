@@ -2,6 +2,9 @@ import pkg_resources
 import pandas as pd
 from sklearn import preprocessing
 
+def bad_load():
+    return {}
+
 def load_wine():
 
     file_path = 'https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/wine/wine.data'
