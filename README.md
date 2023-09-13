@@ -20,7 +20,7 @@ Benchmark your machine learning algorithms and pipelines with ease. Currently, r
 ## Installation
 
 ```bash
-!pip install git+https://github.com/rcpsilva/MLBenchmarks@main
+pip install git+https://github.com/rcpsilva/MLBenchmarks.git@v.0.0.1-alpha#egg=MLBenchmarks
 ```
 
 ## Usage
