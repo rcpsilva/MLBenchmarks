@@ -5,7 +5,7 @@ Benchmark your machine learning algorithms and pipelines with ease. Currently, r
 ![GitHub](https://img.shields.io/github/license/rcpsilva/MLBenchmarks)
 ![GitHub last commit](https://img.shields.io/github/last-commit/rcpsilva/MLBenchmarks)
 ![GitHub stars](https://img.shields.io/github/stars/rcpsilva/MLBenchmarks?style=social)
-![GitHub downloads](https://img.shields.io/github/downloads/rcpsilva/MLBenchmarks/total.svg)
+![GitHub downloads](https://img.shields.io/github/downloads/rcpsilva/MLBenchmarks/total)
 
 ## Table of Contents
 
