@@ -16,7 +16,8 @@ setup(
                       'pandas',
                       'openpyxl',
                       'setuptools',
-                      'xlrd'
+                      'xlrd',
+                      'ucimlrepo'  
                       ],
     classifiers=[
         'Topic :: Software Development :: Libraries :: Python Modules',
