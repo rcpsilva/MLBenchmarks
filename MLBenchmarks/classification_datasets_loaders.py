@@ -1,6 +1,27 @@
-import pkg_resources
 import pandas as pd
 from sklearn import preprocessing
+
+def load_obesity_eating_habits():
+
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition/ObesityDataSet_raw_and_data_sinthetic.csv')
+    df = df.dropna()
+
+    cat = df.select_dtypes(exclude='number')
+    label_encoder = preprocessing.LabelEncoder()
+    for col in cat.columns:
+        df[col] = label_encoder.fit_transform(df[col])
+
+    df = df.to_numpy()
+
+    target = df[:,-1]
+    data = df[:,0:-1]
+
+    dataset = {'target': target,
+            'data': data,
+            'info':'https://archive.ics.uci.edu/dataset/544/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition',
+            'date_access':'2023-09-20'}
+
+    return dataset
 
 def load_wine():
 
@@ -17,7 +38,7 @@ def load_wine():
     dataset = {'target': target,
             'data': data,
             'info':'https://archive.ics.uci.edu/dataset/109/wine',
-            'date_access':'2023-12-09'}
+            'date_access':'2023-09-12'}
 
     return dataset
 
@@ -33,7 +54,7 @@ def load_spambase():
     dataset = {'target': target,
             'data': data,
             'info':'https://archive.ics.uci.edu/dataset/94/spambase',
-            'date_access':'2023-12-09'}
+            'date_access':'2023-09-12'}
 
     return dataset
 
@@ -51,7 +72,7 @@ def load_student_dropout():
     dataset = {'target': df[target].to_numpy(),
             'data': df.drop([target],axis=1).to_numpy(),
             'info':'https://archive.ics.uci.edu/dataset/697/predict+students+dropout+and+academic+success',
-            'date_access':'2023-12-09'}
+            'date_access':'2023-09-12'}
 
     return dataset
 
@@ -66,7 +87,7 @@ def load_dry_bean():
     dataset = {'target': df['Class'].to_numpy(),
             'data': df.drop(['Class'],axis=1).to_numpy(),
             'info':'https://archive.ics.uci.edu/dataset/602/dry+bean+dataset',
-            'date_access':'2023-12-09'}
+            'date_access':'2023-09-12'}
 
     return dataset
 
@@ -107,6 +128,13 @@ def load_mushroom():
     dataset = {'target': df['class'].to_numpy(),
                 'data': df.drop(['class'],axis=1).to_numpy(),
                 'info':'https://archive.ics.uci.edu/dataset/73/mushroom',
-                'date_access':'2023-12-09'}
+                'date_access':'2023-09-12'}
 
     return dataset
+
+if __name__ == '__main__':
+
+    dataset = load_student_dropout()
+
+    print(dataset['target'])
+    print(dataset['data'])
