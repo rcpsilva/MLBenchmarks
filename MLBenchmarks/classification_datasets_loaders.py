@@ -1,6 +1,13 @@
 import pandas as pd
 from sklearn import preprocessing
 
+
+def load_soybean_large():
+    pass
+
+def load_spect():
+    pass
+
 def load_obesity_eating_habits():
 
     df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition/ObesityDataSet_raw_and_data_sinthetic.csv')
@@ -131,10 +138,3 @@ def load_mushroom():
                 'date_access':'2023-09-12'}
 
     return dataset
-
-if __name__ == '__main__':
-
-    dataset = load_student_dropout()
-
-    print(dataset['target'])
-    print(dataset['data'])
