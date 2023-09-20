@@ -1,12 +1,41 @@
 import pandas as pd
 from sklearn import preprocessing
 
-
-def load_soybean_large():
-    pass
+#def load_soybean_large():
+#    pass
 
 def load_spect():
-    pass
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/spect+heart/SPECT_all.csv',header=None)
+    
+    df[df.columns] = df[df.columns].apply(pd.to_numeric)
+
+    df = df.to_numpy()
+
+    target = df[:,0]
+    data = df[:,1:-1]
+
+    dataset = {'target': target,
+            'data': data,
+            'info':'https://archive.ics.uci.edu/dataset/95/spect+heart',
+            'date_access':'2023-09-20'}
+
+    return dataset
+
+def load_spectf():
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/spect+heart/SPECTF_all.csv',header=None)
+    
+    df = df.to_numpy()
+
+    target = df[:,0]
+    data = df[:,1:-1]
+
+    dataset = {'target': target,
+            'data': data,
+            'info':'https://archive.ics.uci.edu/dataset/95/spect+heart',
+            'date_access':'2023-09-20'}
+
+    return dataset
+    
 
 def load_obesity_eating_habits():
 

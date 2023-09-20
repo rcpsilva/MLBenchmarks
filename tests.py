@@ -6,7 +6,7 @@ import numpy as np
 from sklearn.tree import DecisionTreeRegressor, DecisionTreeClassifier
 from sklearn.linear_model import LinearRegression, LogisticRegression
 
-class TestLoadRegressionDatasets:
+class TestMLBenchmarks:
 
     def test_classification_datasets(self):
         datasets = load_classification_datasets()
