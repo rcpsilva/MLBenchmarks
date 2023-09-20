@@ -1,11 +1,30 @@
 import pandas as pd
 from sklearn import preprocessing
 
-#def load_soybean_large():
-#    pass
+def load_soybean_large():
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/soybean%2Blarge/soybean-large.data',header=None,na_values='?')
+    df = df.dropna()
+
+    cat = df.select_dtypes(exclude='number')
+    label_encoder = preprocessing.LabelEncoder()
+    for col in cat.columns:
+        df[col] = label_encoder.fit_transform(df[col])
+
+    df = df.to_numpy()
+
+    target = df[:,0]
+    data = df[:,1:-1]
+
+    dataset = {'target': target,
+            'data': data,
+            'info':'https://archive.ics.uci.edu/dataset/90/soybean+large',
+            'date_access':'2023-09-20'}
+
+    return dataset    
+    
 
 def load_spect():
-    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/spect+heart/SPECT_all.csv',header=None)
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/spect%2Bheart/SPECT_all.csv',header=None)
     
     df[df.columns] = df[df.columns].apply(pd.to_numeric)
 
@@ -22,7 +41,7 @@ def load_spect():
     return dataset
 
 def load_spectf():
-    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/spect+heart/SPECTF_all.csv',header=None)
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/spect%2Bheart/SPECTF_all.csv',header=None)
     
     df = df.to_numpy()
 
@@ -36,7 +55,6 @@ def load_spectf():
 
     return dataset
     
-
 def load_obesity_eating_habits():
 
     df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition/ObesityDataSet_raw_and_data_sinthetic.csv')
