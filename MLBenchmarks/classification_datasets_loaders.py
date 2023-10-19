@@ -1,6 +1,27 @@
 import pandas as pd
 from sklearn import preprocessing
 
+def load_breast_cancer_wisconsin():
+    label_encoder = preprocessing.LabelEncoder()
+    df = pd.read_csv('/content/wdbc.data',header=None)
+    df = df.dropna()
+
+    cat = df.select_dtypes(exclude=['number'])
+
+    for col in cat.columns:
+        df[col] = label_encoder.fit_transform(df[col])
+
+    df = df.to_numpy()
+    target = df[:,1]
+    data = df[:,2:-1] 
+
+    dataset = {'target':target,
+               'data':data,
+               'info':'https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic',
+               'date_access':'2023-10-19'}
+
+    return dataset
+
 def load_soybean_large():
     df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/soybean%2Blarge/soybean-large.data',header=None,na_values='?')
     df = df.dropna()
