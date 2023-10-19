@@ -3,7 +3,7 @@ from sklearn import preprocessing
 
 def load_breast_cancer_wisconsin():
     label_encoder = preprocessing.LabelEncoder()
-    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets\Classification/breast+cancer+wisconsin+diagnostic/wdbc.data',header=None')
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Classification/breast+cancer+wisconsin+diagnostic/wdbc.data',header=None)
     df = df.dropna()
 
     cat = df.select_dtypes(exclude=['number'])
