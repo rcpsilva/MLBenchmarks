@@ -2,6 +2,37 @@ import pandas as pd
 import numpy as np
 from sklearn import preprocessing
 
+def load_spm_demagnetization_analytical():
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/spm%2Bdemagnetization/Dataset_SPM_demagnetization.csv')
+
+    df = df.dropna()
+    target = df['max_OL_analytical'].to_numpy()
+    
+    data = df.to_numpy()[:,0:-2]
+
+    dataset = {'target': target,
+            'data': data,
+            'info': 'https://www.kaggle.com/datasets/mrjacopong/spm-demagnetization-dataset',
+            'date_access': '2023-07-11'}
+    
+    return dataset 
+
+def load_spm_demagnetization_FEM():
+    df = pd.read_csv('https://raw.githubusercontent.com/rcpsilva/MLBenchmarks/main/MLBenchmarks/datasets/Regression/spm%2Bdemagnetization/Dataset_SPM_demagnetization.csv')
+
+    df = df.dropna()
+    target = df['max_OL'].to_numpy()
+    
+    data = df.to_numpy()[:,0:-2]
+
+    dataset = {'target': target,
+            'data': data,
+            'info': 'https://www.kaggle.com/datasets/mrjacopong/spm-demagnetization-dataset',
+            'date_access': '2023-07-11'}
+    
+    return dataset 
+
+
 def load_facebook_post_interactions():
     
     target_idx = 18
