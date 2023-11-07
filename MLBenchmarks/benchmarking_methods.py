@@ -9,6 +9,26 @@ from sklearn.model_selection import cross_validate
 import MLBenchmarks.classification_datasets_loaders as classification_datasets_loaders
 import MLBenchmarks.regression_datasets_loaders as regression_datasets_loaders
 
+def load_specific_datasets(loader_names):
+
+    # Get a list of all attributes (including methods) of the load_datasets module
+    module_attributes = dir(regression_datasets_loaders)
+
+    # Filter out only the functions (methods)
+    methods = [attr for attr in module_attributes if callable(getattr(regression_datasets_loaders, attr))]
+    datasets = {}
+
+    # Call each method in the module
+    for method_name in methods:
+        if method_name in loader_names:
+            method = getattr(regression_datasets_loaders, method_name)
+            if callable(method):
+                print(f"Running {method_name} ...")
+                dataset = method()
+                datasets[method_name] = (dataset['data'], dataset['target'])
+                
+    return datasets
+
 def load_regression_datasets():
 
     # Get a list of all attributes (including methods) of the load_datasets module

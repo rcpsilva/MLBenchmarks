@@ -12,7 +12,7 @@ def load_spm_demagnetization_analytical():
 
     dataset = {'target': target,
             'data': data,
-            'info': 'https://www.kaggle.com/datasets/mrjacopong/spm-demagnetization-dataset',
+            'info': 'https://github.com/mrjacopong/SPM_demagnetization',
             'date_access': '2023-07-11'}
     
     return dataset 
@@ -27,7 +27,7 @@ def load_spm_demagnetization_FEM():
 
     dataset = {'target': target,
             'data': data,
-            'info': 'https://www.kaggle.com/datasets/mrjacopong/spm-demagnetization-dataset',
+            'info': 'https://github.com/mrjacopong/SPM_demagnetization',
             'date_access': '2023-07-11'}
     
     return dataset 
