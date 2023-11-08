@@ -10,6 +10,8 @@ def load_spm_demagnetization_analytical():
     
     data = df.to_numpy()[:,0:-2]
 
+    data = preprocessing.MinMaxScaler().fit_transform(data)
+
     dataset = {'target': target,
             'data': data,
             'info': 'https://github.com/mrjacopong/SPM_demagnetization',
@@ -24,6 +26,8 @@ def load_spm_demagnetization_FEM():
     target = df['max_OL'].to_numpy()
     
     data = df.to_numpy()[:,0:-2]
+
+    data = preprocessing.MinMaxScaler().fit_transform(data)
 
     dataset = {'target': target,
             'data': data,
