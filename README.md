@@ -100,7 +100,7 @@ res = run_cross_dataset_benchmark(datasets, model, metrics,
                                 'single_model.json', cv=5)
 ```
 
-- Benchmarking multiple models
+- Benchmarking multiple models (with a subset of the dasets)
 
 ```python
 from sklearn.linear_model import LinearRegression, Ridge
@@ -115,7 +115,8 @@ models = {
 }
 
 metrics = ['neg_mean_absolute_error','explained_variance','neg_mean_absolute_percentage_error']
-datasets = load_regression_datasets()
+# Select only the SPM datsets
+datasets = load_specific_datasets(['load_spm_demagnetization_analytical','load_spm_demagnetization_FEM'])
 
 res = run_cross_dataset_benchmark_models(models, datasets, metrics, 'multiple_model.json', cv=5)
 ```
@@ -156,22 +157,33 @@ res = run_cross_dataset_benchmark_models(models, datasets, metrics, 'pipeline_mo
 Here's an overview of the folder structure of this repository:
 
 + MLBenchmarks
-    + MLBenchmarks/
+     + MLBenchmarks/
         + datasets/
             + Classification/
+                + breast+cancer+wisconsin+diagnostic/
                 + dry+bean+dataset/
+                    + DryBeanDataset/
+                + estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition/
+                + glass+identification/
                 + mushroom/
                 + predict+students+dropout+and+academic+success/
+                + soybean+large/
                 + spambase/
+                + spect+heart/
                 + wine/
             + Regression/
                 + auto+mpg/
                 + automobile/
+                + bike+sharing+dataset/
+                + concrete+compressive+strength/
+                + energy+efficiency/
+                + estimation+of+obesity+levels+based+on+eating+habits+and+physical+condition/
+                + facebook+metrics/
+                + forest+fires/
+                + real+estate+valuation+data+set/
+                + spm+demagnetization/
                 + student/
                 + wine+quality/
-        + Tests/
-    + Examples/
-
 
 ## License
 
