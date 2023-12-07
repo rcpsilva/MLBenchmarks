@@ -33,7 +33,7 @@ def count_datasets():
         if callable(method):
             count += 1
 
-    print(f'{count} regression datasets')
+    print(f'{count} classification datasets')
 
 def load_specific_datasets(loader_names):
 
