@@ -14,7 +14,8 @@ def count_datasets():
     module_attributes = dir(regression_datasets_loaders)
 
     methods = [attr for attr in module_attributes if callable(getattr(regression_datasets_loaders, attr))]
-    
+    print(methods)
+
     count = 0
     # Call each method in the module
     for method_name in methods:
@@ -25,7 +26,8 @@ def count_datasets():
     print(f'{count} regression datasets')
 
     methods = [attr for attr in module_attributes if callable(getattr(classification_datasets_loaders, attr))]
-
+    print(methods)
+    
     count = 0
     # Call each method in the module
     for method_name in methods:
